@@ -271,8 +271,8 @@ test.serial('should skip authentication and collaborator checks when running on 
   collaboratorStub.restore();
 
   if (!GITHUB_ACTIONS) {
-    process.env.GITHUB_ACTIONS = GITHUB_ACTIONS ?? '';
-    process.env.GITHUB_ACTOR = GITHUB_ACTOR ?? '';
+    process.env.GITHUB_ACTIONS = GITHUB_ACTIONS || '';
+    process.env.GITHUB_ACTOR = GITHUB_ACTOR || '';
   }
 });
 
