@@ -221,7 +221,9 @@ test('should release to git.pushRepo', async t => {
   exec.restore();
 });
 
-test('should throw for unauthenticated user', async t => {
+const testSkipOnActions = process.env.GITHUB_ACTIONS ? test.skip : test;
+
+testSkipOnActions('should throw for unauthenticated user', async t => {
   const options = { github: { tokenRef, pushRepo, host } };
   const github = factory(GitHub, { options });
   const stub = sinon.stub(github.client.users, 'getAuthenticated');
@@ -235,7 +237,7 @@ test('should throw for unauthenticated user', async t => {
   stub.restore();
 });
 
-test('should throw for non-collaborator', async t => {
+testSkipOnActions('should throw for non-collaborator', async t => {
   interceptAuthentication({ username: 'john' });
   const options = { github: { tokenRef, pushRepo, host } };
   const github = factory(GitHub, { options });
