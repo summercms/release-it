@@ -251,7 +251,7 @@ test.serial('should skip authentication and collaborator checks when running on 
   const { GITHUB_ACTIONS, GITHUB_ACTOR } = process.env;
   if (!GITHUB_ACTIONS) {
     process.env.GITHUB_ACTIONS = 1;
-    process.env.GITHUB_ACTOR = 'release-it';
+    process.env.GITHUB_ACTOR = 'webpro';
   }
 
   const options = { github: { tokenRef } };
@@ -263,7 +263,7 @@ test.serial('should skip authentication and collaborator checks when running on 
 
   t.is(authStub.callCount, 0);
   t.is(collaboratorStub.callCount, 0);
-  t.is(github.getContext('username'), 'release-it');
+  t.is(github.getContext('username'), 'webpro');
 
   authStub.restore();
   collaboratorStub.restore();
