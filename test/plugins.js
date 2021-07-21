@@ -110,6 +110,7 @@ test.serial('should instantiate plugins and execute all release-cycle methods', 
 });
 
 test.serial('should disable core plugins', async t => {
+  t.timeout(60000);
   sh.exec('npm init -f');
   sh.mkdir('replace-plugin');
   sh.pushd('-q', 'replace-plugin');
@@ -137,6 +138,7 @@ test.serial('should disable core plugins', async t => {
 });
 
 test.serial('should support ESM-based plugins', async t => {
+  t.timeout(60000);
   sh.exec('npm init -f');
   sh.mkdir('my-plugin');
   sh.pushd('-q', 'my-plugin');
@@ -164,6 +166,7 @@ test.serial('should support ESM-based plugins', async t => {
 });
 
 test.serial('should expose context to execute commands', async t => {
+  t.timeout(60000);
   sh.ShellString('{"name":"pkg-name","version":"1.0.0"}').toEnd('package.json');
   const repo = parseGitUrl('https://github.com/user/pkg');
 
