@@ -397,7 +397,7 @@ test.serial('should propagate errors', async t => {
 
 {
   test.serial('should run all hooks', async t => {
-    t.timeout(60000);
+    t.timeout(600000);
     gitAdd(`{"name":"hooked","version":"1.0.0"}`, 'package.json', 'Add package.json');
     sh.mkdir('my-plugin');
     sh.pushd('-q', 'my-plugin');
