@@ -78,7 +78,7 @@
     "ora": "5.4.1",
     "os-name": "4.0.0",
     "parse-json": "5.2.0",
-    "semver": "7.3.5",
+    "semver": "7.5.2",
     "shelljs": "0.8.4",
     "update-notifier": "5.1.0",
     "url-join": "4.0.1",
